@@ -1,0 +1,17 @@
+{
+  "layers": {
+    "background": {"special": "sea"},
+    "graticule": {"special": "graticule", "latitudes": 5, "longitudes": 5},
+    "countries": {"src": "shapefiles/ne_50m_admin_0_countries.shp", "simplify": 0.25}
+  },
+  "proj": {
+    "id": "ortho",
+    "lon0": -180,
+    "lat0": 85
+  },
+  "bounds": {
+    "mode": "bbox",
+    "data": [85, -180, -85, 180],
+    "padding": 0.06
+  }
+}

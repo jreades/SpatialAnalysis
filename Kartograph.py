@@ -14,7 +14,7 @@ config = {
     },
     {
       "id": "countries",
-      "src": "ne_50m_admin_0_countries.shp",
+      "src": "shapefiles/ne_50m_admin_0_countries.shp",
       "attributes": "all", 
       "styles": {
         "stroke-width": "0.4px",
@@ -31,3 +31,4 @@ config = {
 
 K = Kartograph()
 K.generate(config, outfile='mymap.svg', stylesheet="world.css")
+

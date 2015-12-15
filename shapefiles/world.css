@@ -1,8 +1,13 @@
-#grid {
-	color: red;
+#graticule {
+	color: #aaaaaa;
+	stroke-width: 0.3px;
+}
+
+#background {
+	fill: #ababdd;
+	stroke: none; 
 }
 
 #countries {
-	color: red;
-	fill: currentColor;
+	fill: #ff9999;
 }
