@@ -26,23 +26,22 @@ df.columns = ["CDU_ID","GEO_CODE","GEO_LABEL",
 df.set_index('GEO_CODE')
 
 print(type(shp))
-
-shp.head()
-
+print(shp.head())
 print(type(shp.LSOA11NM))
 print(type(shp.geometry))
-
 print(shp.geometry.area.head())
-
-shpdf = pd.merge(shp, df, left_on='LSOA11CD', right_on='GEO_CODE', how='left')
 
 shp['centroid'] = gpd.GeoSeries(shp.geometry.representative_point(), index=shp.index)
 
-shpdf.plot(column='Group1', figsize=(4,3), scheme='natural_breaks', k=7, colormap='Blues', linewidth=0)
-shpdf.Group1.plot(column='geometry', scheme='natural_breaks', k=7, colormap='Blues', linewidth=0)
+shpdf = pd.merge(shp, df, left_on='LSOA11CD', right_on='GEO_CODE', how='left')
 
-fig = plt.figure(dpi=300)
+print(shpdf.head())
+
+subdf = gpd.GeoDataFrame(gpd.GeoSeries(shpdf.geometry),pd.Series(shpdf.Group1))
+subdf.reset_index(inplace=True)
+
+fig = plt.figure(figsize=(10,5))
 ax = fig.add_subplot(111, axisbg='w', frame_on=True)
-shpdf.plot(column='Group5', scheme='natural_breaks', k=7, colormap='Blues', axes=ax)
+subdf.plot(column='Group1', scheme='natural_breaks', k=7, colormap='Blues', axes=ax)
 plt.tight_layout()
 plt.show()
