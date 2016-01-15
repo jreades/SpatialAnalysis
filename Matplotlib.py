@@ -16,7 +16,6 @@ import fiona
 import pyproj 
 import os
 from itertools import chain
-import geopandas as gpd
 
 srcdir = os.path.join(os.path.expanduser('~'),'Dropbox','KCL Modules','Undergraduate','2nd Year','Spatial Analysis','SpatialAnalysis')
 
