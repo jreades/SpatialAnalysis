@@ -1,10 +1,23 @@
+# sudo apt-get update
+# sudo apt-get install libgdal-dev
+# 
+# pip install geopandas
+# pip uninstall fiona
+# In Canopy install fiona using the Package Manager
+# In Canopy install pysal, basemap, descartes, folium
+# pip install shapely==1.5.12
+# pip install pyepsg
+#
+# To view GeoJSON locally:
+# google-chrome --allow-file-access-from-files
+
 import folium  
 import pandas as pd
-import geopandas as gpd
-#from fiona import collections
+import geopandas as gpd 
 import os
 
 srcdir = os.path.join(os.path.expanduser('~'),'Dropbox','KCL Modules','Undergraduate','2nd Year','Spatial Analysis','SpatialAnalysis')
+srcdir = os.path.join(os.path.expanduser('~'),'Documents','SpatialAnalysis')
 shpdir = os.path.join(srcdir,'shapefiles')
 outdir = os.path.join(os.path.expanduser('~'),'Desktop')
 LDN_COORDINATES = (51.5180, -0.1134)
